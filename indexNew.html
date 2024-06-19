@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Website</title>
+    <link rel="stylesheet" href="styles.css">
+<!--font-->
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins">
+</head>
+
+<body>
+    <div id="background">
+        <div class="container"> 
+            <nav>
+                <ul class="navBar">
+                    <li><a href="#background">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfilio</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </nav>
+            <div class="intro-top">
+                <h1>Hello</h1>
+            </div>
+            <div class="intro-container">
+                <div class="intro-left">
+                    <h1>My name is <br><span>Ethan</span></h1>
+                </div>
+                <div class="intro-right">
+                    <h1>I'm a student at <br><span>Hunter College</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen">
+        <div id="about">
+            <div class="container">
+                <div class="columns">
+                    <div class="about-left-column">
+                        <img src="images/Hunter.png" alt="">
+                    </div>
+                    <div class="about-center-column">
+                        <h1 class="headers">About Me</h1>
+                        <p>As an undergraduate at Hunter College, 
+                            I will be able to combine years of hard work to better 
+                            myself and focus that drive into efficient, thoughtful work. 
+                            I can confidently say the social skills I have built throughout my 
+                            lifetime will be put to great use whether it be in the workplace, 
+                            or making connections elsewhere. I aspire to fulfill my passion for Artificial Intelligence, 
+                            and I hope to build a variety of coding skills along the way. I'm currently learning everything 
+                            that I can, and I am open to any opportunities involving growth in these areas.</p>
+                    </div>
+                    <div class="about-right-column">
+                        <img src="images/Hunter.png" alt="">
+                    </div>
+                </div>
+                <div class="about-bottom">
+                    <div class="tabs">
+                        <p class="tab-link active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-link" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-link" onclick="openTab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-content active-tab" id="skills">
+                        <!-----List of skills under each tab----->
+                        <ul>
+                            <li><span>Programming</span><br>Developed skills in python, java, html, and css through self study and academic coursework.</li><br>
+                            <li><span>Communication/Collaboration</span><br>Worked with teachers and other teachers assistants to help students understand and program in java.</li><br>
+                            <li><span>Critical Thinking</span><br>Enhanced the ability to critically think whilst self studying programming and managing customer experiences thoughout a work career.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="experience">
+                        <ul>
+                            <li><span>Cold Spring Harbor High School - Computer Science Teacher Assistant</span><br>Practiced leadership, patience, and adaptability while assisting students in understanding the concepts of java.</li><br>
+                            <li><span>Escape Virtuality - Employee</span><br>Sharpened abilities in teamwork and quick thinking under a fast paced, demanding environment to enhance customer experience.</li><br>
+                            <li><span>Digital Marketing - Self Employed</span><br>Created advertisements for small brands and companies to help bolster revenue and solidify a consistent customer base.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="education">
+                        <ul>
+                            <li><span>Hunter College (August 2023 - Present)</span><br>Major: Computer Science<br>Relevant Coursework: Calculus 2</li><br>
+                            <li><span>Indiana University (August 2021 - May 2023)</span><br>Major: Computer Science<br>Relevant Coursework:<br>
+                                 Software Systems, The Computer in Business, Informatics, Discrete Structures</li><br>
+                            <li><span>Cold Spring Harbor High School (September 2017 - June 2021)</span><br>Activities and Societies:<br>
+                                National Honor Society, Tri-M Music Honor Society, Spanish Honor Society, Varsity Tennis, Varsity Crew</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="portfolio">
+            <div class="container">
+                <h1 class="headers">My Portfilio</h1>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="container">
+                <h1 class="headers">Contact Me</h1>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-link");
+    var tabcontents = document.getElementsByClassName("tab-content");
+
+    /*about me underline code*/
+    function openTab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
