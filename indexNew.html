@@ -12,15 +12,25 @@
 <body>
     <div id="background">
         <div class="container"> 
-            <nav>
-                <ul class="navBar">
-                    <li><a href="#background">Home</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#portfolio">Portfilio</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-            </nav>
             <div class="intro-top">
+                <div class="drop-container">
+                    <div class="trim">
+                        <figure class="menu-icon">
+                            <img src="images/3D White Wall Shelf Model Made Of Squares_processed.png" alt="">
+                            <h1>Menu</h1>
+                        </figure>
+                    </div>
+                    <div class="dropdown">
+                        <nav>
+                            <ul>
+                                <li class="navLink1"><a href="#background">Home</a><p>Back to the home page</p></li>
+                                <li class="navLink2"><a href="#about">About Me</a><p>My current endeavors</p></li>
+                                <li class="navLink3"><a href="#portfolio">Portfilio</a><p>Notable projects</p></li>
+                                <li class="navLink4"><a href="#contact">Contact Me</a><p>Let's work together</p></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
                 <h1>Hello</h1>
             </div>
             <div class="intro-container">
@@ -42,7 +52,7 @@
                         <img src="images/Hunter.png" alt="">
                     </div>
                     <div class="about-center-column">
-                        <h1 class="headers">About Me</h1>
+                        <h1 class="headers">About Me</h1> 
                         <p>As an undergraduate at Hunter College, 
                             I will be able to combine years of hard work to better 
                             myself and focus that drive into efficient, thoughtful work. 
@@ -120,4 +130,21 @@
         event.currentTarget.classList.add("active-link");
         document.getElementById(tabname).classList.add("active-tab")
     }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.querySelector(".menu-icon h1");
+    const dropdownContent = document.querySelector(".dropdown");
+
+    menuIcon.addEventListener("click", function() {
+        dropdownContent.classList.toggle("show");
+    });
+
+    // Close the dropdown if the user clicks outside of it
+    window.addEventListener("click", function(event) {
+        if (!menuIcon.contains(event.target)) {
+            dropdownContent.classList.remove("show");
+        }
+    });
+});
 </script>
