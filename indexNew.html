@@ -132,19 +132,25 @@
     }
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    const menuIcon = document.querySelector(".menu-icon h1");
-    const dropdownContent = document.querySelector(".dropdown");
+    document.addEventListener('DOMContentLoaded', function() {
+    var dropdown = document.querySelector('.dropdown');
+    var button = document.querySelector('.menu-icon h1');
 
-    menuIcon.addEventListener("click", function() {
-        dropdownContent.classList.toggle("show");
-    });
-
-    // Close the dropdown if the user clicks outside of it
-    window.addEventListener("click", function(event) {
-        if (!menuIcon.contains(event.target)) {
-            dropdownContent.classList.remove("show");
+    button.addEventListener('click', function() {
+        if (dropdown.classList.contains('show')) {
+            dropdown.classList.remove('show');
+            setTimeout(function() {
+                dropdown.style.display = 'none';
+            }, 500); // Wait for the transition to complete
+        } else {
+            dropdown.style.display = 'flex';
+            setTimeout(function() {
+                dropdown.classList.add('show');
+            }, 0); // Slight delay to ensure display is applied before transition
         }
+    })
+    window.addEventListener('click', function() {
+        dropdown.classList.remove('show');
     });
 });
 </script>
